@@ -23,7 +23,7 @@ const handleSelect = (key, keyPath) => {
   console.log(key, keyPath)
 }
 const handleClick = () => {
-  window.location = 'http://localhost:80/#/login'
+  window.location = 'http://admin.qianfengnews.timeismoney.blog/#/login'
 }
 </script>
 
