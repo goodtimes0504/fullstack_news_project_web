@@ -48,10 +48,7 @@
             shadow="hover"
             @click="handelChangePage(item._id)"
           >
-            <img
-              :src="`http://localhost:3000${item.cover}`"
-              style="width: 100%"
-            />
+            <img :src="`${baseURL + item.cover}`" style="width: 100%" />
             <div style="padding: 14px">
               <span>{{ item.title }}</span>
               <div class="bottom">
@@ -81,15 +78,10 @@
                 :body-style="{ padding: '0px' }"
                 @click="handelChangePage(item._id)"
               >
-                <!-- <img
-              :src="`http://localhost:3000${data.cover}`"
-              style="width: 100%"
-              class="tab-img"
-            /> -->
                 <div
                   class="tab-image"
                   :style="{
-                    backgroundImage: `url(http://localhost:3000${data.cover})`,
+                    backgroundImage: `url(${baseURL + data.cover})`,
                   }"
                 ></div>
                 <div style="padding: 14px; float: left">
@@ -150,6 +142,7 @@ const newsList = ref([])
 const searchText = ref('')
 const searchVisible = ref(false)
 const whichTab = ref(1)
+const baseURL = process.env.VUE_APP_BASE_URL
 
 onMounted(async () => {
   // console.log('news mounted')

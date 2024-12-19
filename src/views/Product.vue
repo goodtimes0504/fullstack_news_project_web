@@ -10,7 +10,7 @@
         <div
           class="item"
           :style="{
-            backgroundImage: `url(http://localhost:3000${item.cover})`,
+            backgroundImage: `url(${baseURL + item.cover})`,
           }"
         >
           <el-card class="box-card">
@@ -35,6 +35,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
+const baseURL = process.env.VUE_APP_BASE_URL
 const loopList = ref([])
 onMounted(async () => {
   const result = await axios.get('/webapi/product/list')
